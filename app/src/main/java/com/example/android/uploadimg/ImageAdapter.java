@@ -58,19 +58,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             holder.textViewName.setText(uploadCurrent.getName());
             Glide.with(mContext)
                     .load(uploadCurrent.getUrl())
-                    .placeholder(R.mipmap.ic_launcher)
+                    .placeholder(R.mipmap.icon)
                     .fitCenter()
                     .centerCrop()
                     .into(holder.imageView);
 
-            holder.imageView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(mContext, ResultActivity.class);
-                    intent.putExtra("url", uploadCurrent.getUrl());
-                    mContext.startActivity(intent);
-                }
-            });
+
 
             // Glide.with(context).load(upload.getUrl()).into(holder.imageView);
         }

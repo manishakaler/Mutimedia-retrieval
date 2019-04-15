@@ -43,9 +43,9 @@ import java.util.Objects;
 public class DatabaseActivity extends Activity {
 
     private static final int PICK_IMAGE_REQUEST = 1;
-    private static final int Image_Capture_Code = 11;
-    private ImageButton mButtonCapture;
-    private int val;
+ //   private static final int Image_Capture_Code = 11;
+ //   private ImageButton mButtonCapture;
+  //  private int val;
 
     private Button mButtonChooseImage;
     private ImageButton mButtonUpload;
@@ -71,7 +71,7 @@ public class DatabaseActivity extends Activity {
         mProgressBar = findViewById(R.id.progress_bar);
 
 
-        mButtonCapture =(ImageButton)findViewById(R.id.camera);
+       // mButtonCapture =(ImageButton)findViewById(R.id.camera);
         mImageView = (ImageView) findViewById(R.id.image_view);
         mStorageRef = FirebaseStorage.getInstance().getReference("uploads");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("uploads");
@@ -95,13 +95,13 @@ public class DatabaseActivity extends Activity {
             }
         });
 
-        mButtonCapture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cInt,Image_Capture_Code);
-            }
-        });
+       // mButtonCapture.setOnClickListener(new View.OnClickListener() {
+
+           // public void onClick(View v) {
+             //   Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+               // startActivityForResult(cInt,Image_Capture_Code);
+           // }
+        //});
     }
 
     private void openFileChooser() {
@@ -117,24 +117,24 @@ public class DatabaseActivity extends Activity {
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
                 && data != null && data.getData() != null) {
-            val = PICK_IMAGE_REQUEST;
             mImageUri = data.getData();
 
             Glide.with(this).load(mImageUri).into(mImageView);
         }
-        if (requestCode == Image_Capture_Code) {
-            if (resultCode == RESULT_OK) {
-                val = Image_Capture_Code;
-                Bitmap bp = (Bitmap) data.getExtras().get("data");
-                mImageView.setImageBitmap(bp);
-                encodeBitmapAndSaveToFirebase(bp);
+       // if (requestCode == Image_Capture_Code) {
+         //   if (resultCode == RESULT_OK) {
+           //     val = Image_Capture_Code;
+             //   Bitmap bp = (Bitmap) data.getExtras().get("data");
+               // mImageView.setImageBitmap(bp);
+               // encodeBitmapAndSaveToFirebase(bp);
                //mImageUri = data.getData();
                 //Glide.with(this).load(mImageUri).into(mImageView);
-            } else if (resultCode == RESULT_CANCELED) {
+            //}
+            else {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             }
         }
-    }
+
 
     public String getFileExtension(Uri uri) {
         ContentResolver cR = getContentResolver();
@@ -144,7 +144,7 @@ public class DatabaseActivity extends Activity {
 
 
     private void uploadFile() {
-        if (mImageUri != null && val == PICK_IMAGE_REQUEST) {
+        if (mImageUri != null ) {
             final StorageReference fileReference = mStorageRef.child("uploads" + System.currentTimeMillis()
                     + "." + getFileExtension(mImageUri));
 
@@ -180,7 +180,7 @@ public class DatabaseActivity extends Activity {
                         Toast.makeText(DatabaseActivity.this, "Upload successful", Toast.LENGTH_LONG).show();
                         HashMap<String, String> map = new HashMap<>();
                         map.put("url", downloadUri.toString());
-                        map.put("name", mEditTextFileName.getText().toString());
+                       // map.put("name", mEditTextFileName.getText().toString());
                         mDatabaseRef.push().setValue(map);
 
                     } else {
@@ -202,15 +202,15 @@ public class DatabaseActivity extends Activity {
         }
     }
 
-    public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-        String imageEncoded = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
-        DatabaseReference ref = FirebaseDatabase.getInstance()
-                .getReference("uploads");
+   // public void encodeBitmapAndSaveToFirebase(Bitmap bitmap) {
+     //   ByteArrayOutputStream baos = new ByteArrayOutputStream();
+       // bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+       // String imageEncoded = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
+       // DatabaseReference ref = FirebaseDatabase.getInstance()
+         //       .getReference("uploads");
 
-        ref.setValue(imageEncoded);
-    }
+        //ref.setValue(imageEncoded);
+    //}
 
 
 }

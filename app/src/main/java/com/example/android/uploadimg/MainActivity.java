@@ -51,5 +51,12 @@ public class MainActivity extends Activity {
         Intent in = new Intent(this, SelectActivity.class);
         startActivity(in);
     }
+
+    public void srch(View view) {
+        // startActivity(Intent(this, UploadImageActivity::class.java))
+        Intent j = new Intent(this, UploadImageActivity.class);
+        startActivity(j);
+    }
+
 }
 

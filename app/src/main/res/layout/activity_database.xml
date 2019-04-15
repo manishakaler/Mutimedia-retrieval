@@ -22,7 +22,6 @@
             android:layout_marginRight="4dp"
             android:background="@color/green"
             android:cropToPadding="false"
-            android:onClick="cappic"
             android:scaleType="fitCenter"
             android:visibility="visible"
             android:src="@android:drawable/ic_menu_camera" />

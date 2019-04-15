@@ -1,82 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingTop="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
-    android:visibility="visible"
-    tools:context=".ResultActivity">
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="395dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/imageView"
-        android:src="@mipmap/download" />
+    android:background="@mipmap/p2"
+    android:alpha="0.75">
 
     <Button
-        android:id="@+id/onClick"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView4"
-        android:onClick="sendMessage"
-        android:text="filter1"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
+        android:id="@+id/select"
+        android:layout_width="203dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/green"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:fontFamily="serif-monospace"
+        android:text="Storage"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="28sp" />
+
+
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="395dp"
-        android:layout_height="100dp"
-        android:src="@mipmap/download" />
+        android:id="@+id/imagePreview"
+        android:layout_width="match_parent"
+        android:layout_below="@id/select"
+        android:background="@color/green"
+        android:layout_marginTop="20dp"
+        android:layout_height="550dp" />
 
-    <Button
-        android:id="@+id/onClick2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/onClick"
-        android:layout_marginTop="3dp"
-        android:onClick="sendMessage2"
-        android:text="filter2"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="395dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/imageView2"
-        android:src="@mipmap/download" />
-
-    <Button
-        android:id="@+id/onClick3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="sendMessage3"
-        android:layout_below="@id/onClick2"
-        android:text="filter3"
-        android:textAppearance="@style/TextAppearance.AppCompat"
-        android:textColor="@color/colorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="395dp"
-        android:layout_height="100dp"
-        android:layout_below="@id/imageView3"
-        android:src="@mipmap/download" />
-
-
-
-</RelativeLayout>
+    </RelativeLayout>

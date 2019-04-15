@@ -75,6 +75,7 @@
         android:background="@color/green"
         android:fontFamily="serif-monospace"
         android:text="Search "
+        android:onClick="srch"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30dp"
