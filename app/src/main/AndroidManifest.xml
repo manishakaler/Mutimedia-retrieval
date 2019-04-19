@@ -26,6 +26,10 @@
         <activity android:name=".DatabaseActivity" />
         <activity android:name=".SelectActivity" />
         <activity android:name=".UploadImageActivity" />
+        <activity android:name=".ImageActivity"/>
+        <activity android:name=".FloorplanActivity"/>
+        <activity android:name=".activity2"/>
+        <activity android:name=".DisplayImages"/>
     </application>
 
 

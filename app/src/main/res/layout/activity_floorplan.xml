@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/p2"
+    android:alpha="0.75">
+    <TextView
+        android:id="@+id/fp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Floor-plan Retrieval"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/i1"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp"
+        android:layout_above="@+id/b1"
+        android:background="@color/green" />
+
+    <Button
+        android:id="@+id/b1"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green"
+        android:fontFamily="serif-monospace"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:text="Select Image" />
+
+</RelativeLayout>

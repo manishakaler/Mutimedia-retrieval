@@ -11,9 +11,10 @@ import android.widget.ImageButton;
 
 
 public class MainActivity extends Activity {
-    private Button ShowUploads;
+
+
     private static final int Img_Capture_Code = 11;
-    private ImageButton mCam;
+   // private ImageButton mCam;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,42 +22,28 @@ public class MainActivity extends Activity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        ShowUploads = findViewById(R.id.show_uploads);
-        mCam =(ImageButton)findViewById(R.id.imageButton);
 
-        ShowUploads.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSelectActivity();
-            }
-        });
+        //mCam =(ImageButton)findViewById(R.id.imageButton);
 
-        mCam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cInt,Img_Capture_Code);
-            }
-        });
+
+
+           // public void onClick(View v) {
+             //   Intent cInt = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+             //   startActivityForResult(cInt,Img_Capture_Code);
+           // }
+        //});
     }
 
-    public void upData(View view) {
-        Intent i = new Intent(this, DatabaseActivity.class);
-        startActivity(i);
+    public void Floorplan(View view) {
+        Intent fp = new Intent(this, FloorplanActivity.class);
+        startActivity(fp);
     }
 
-
-
-    public void openSelectActivity() {
-        Intent in = new Intent(this, SelectActivity.class);
-        startActivity(in);
+    public void ImageRetrieval(View view) {
+        Intent ir = new Intent(this, ImageActivity.class);
+        startActivity(ir);
     }
 
-    public void srch(View view) {
-        // startActivity(Intent(this, UploadImageActivity::class.java))
-        Intent j = new Intent(this, UploadImageActivity.class);
-        startActivity(j);
-    }
 
 }
 

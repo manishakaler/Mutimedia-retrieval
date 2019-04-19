@@ -7,37 +7,19 @@
     android:background="@mipmap/p2"
     android:alpha="0.75">
 
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/camera"
-            android:layout_width="203dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:layout_marginRight="4dp"
-            android:background="@color/green"
-            android:cropToPadding="false"
-            android:scaleType="fitCenter"
-            android:visibility="visible"
-            android:src="@android:drawable/ic_menu_camera" />
     <Button
         android:id="@+id/button_choose_image"
         android:layout_width="203dp"
-        android:layout_height="match_parent"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:background="@color/green"
         android:textAllCaps="false"
         android:fontFamily="serif-monospace"
         android:text="Storage"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="28sp" />
-    </LinearLayout>
+
 
 
     <ImageView
